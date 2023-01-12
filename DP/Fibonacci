@@ -1,0 +1,26 @@
+//Using Memoization
+
+import java.util.*;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number : ");
+        int n = sc.nextInt();
+        int arr[]= new int[n+1];
+        Arrays.fill(arr,-1);
+        System.out.println("Answer : "+f(n,arr));
+
+    }
+
+    public static int f(int n,int arr[]){
+        if(n<=1)
+            return n;
+
+        if(arr[n]!=-1)
+            return arr[n];
+
+        return arr[n]=f(n-1,arr) + f(n-2,arr);
+    }
+
+}
